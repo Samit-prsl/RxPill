@@ -20,7 +20,7 @@ export class AppService {
       const redisStatus = redisVal ? ' Redis connected' : ' Redis error';
 
       return `
-        <h2>RxPill Backend Health Check</h2>
+        <h2>Welcome to RxPill Backend Health Check</h2>
         <p>${pgStatus}</p>
         <p>${redisStatus}</p>
       `;
