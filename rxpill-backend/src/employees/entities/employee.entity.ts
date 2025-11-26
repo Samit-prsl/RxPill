@@ -1,8 +1,9 @@
-import { Shop } from 'src/shops/entities/shop.entity';
+import { Shop } from '../../shops/entities/shop.entity';
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, UpdateDateColumn, JoinColumn } from 'typeorm';
+import { EmployeeDesignation } from '../enums/employee-designation.enum';
 
 
-@Entity({ name: 'employees' })
+@Entity({ name: 'employee' })
 export class Employee {
   @PrimaryGeneratedColumn()
   id: number;
@@ -16,10 +17,10 @@ export class Employee {
   @Column({ type: 'varchar' })
   password: string;
 
-  @Column({ type: 'int', nullable: true })
-  age?: number;
+  @Column({ type: 'date' })
+  dob: Date;
 
-  @Column({ type: 'varchar', length: 100 })
+  @Column({ type: 'enum', enum: EmployeeDesignation })
   designation: string; 
 
   @ManyToOne(() => Shop, (shop) => shop.employees, { onDelete: 'CASCADE' })

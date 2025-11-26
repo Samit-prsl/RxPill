@@ -1,7 +1,7 @@
-import { Employee } from 'src/employes/entities/employee.entity';
+import { Employee } from '../../employees/entities/employee.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
-@Entity({ name: 'shops' })
+@Entity({ name: 'shop' })
 export class Shop {
   @PrimaryGeneratedColumn()
   id: number;
