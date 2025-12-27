@@ -1,11 +1,16 @@
-import NotFound from "@/pages/NotFound"
-import Test from "@/pages/Test"
-import { createBrowserRouter } from "react-router-dom"
+import NotFound from "@/pages/NotFound";
+import Test from "@/pages/Test";
+import Login from "@/pages/Login";
+import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <>hello</>, //common component to use across this path
+    element: (
+      <>
+        <Login />
+      </>
+    ), //common component to use across this path
     children: [
       {
         index: true,
@@ -19,10 +24,10 @@ export const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <NotFound/>,
+    element: <NotFound />,
   },
   {
     path: "/test",
-    element: <Test/>,
+    element: <Test />,
   },
-])
+]);
