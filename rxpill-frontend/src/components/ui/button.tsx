@@ -10,16 +10,21 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        success: "bg-emerald-600 text-white hover:bg-emerald-600/90",
-        destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
+        primary:
+          "bg-indigo-600 text-white hover:bg-indigo-700 active:bg-indigo-800",
+
+        secondary: "bg-indigo-100 text-indigo-700 hover:bg-indigo-200",
+
+        "outline-primary":
+          "border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white",
+
+        success: "bg-emerald-600 text-white hover:bg-emerald-700",
+
+        destructive: "bg-red-600 text-white hover:bg-red-700",
+
+        ghost: "hover:bg-indigo-50 text-indigo-600",
+
+        link: "text-indigo-600 underline-offset-4 hover:underline",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -34,7 +39,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 function Button({
