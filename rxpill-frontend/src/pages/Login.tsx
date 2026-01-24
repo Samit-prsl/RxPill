@@ -2,6 +2,8 @@ import FormInputText from "../components/Forms/FormInputText";
 import { LoginCard } from "../components/custom/LoginCard";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import { Separator } from "@radix-ui/react-separator";
 
 interface LoginFormInputs {
   email: string;
@@ -9,6 +11,8 @@ interface LoginFormInputs {
 }
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const {
     control,
     //handleSubmit,
@@ -44,10 +48,16 @@ export default function Login() {
           />
         </div>
         <div className="mt-10">
-          <Button className="w-full" size="lg" variant="ghost">
+          <Button className="w-full" size="lg" variant="primary">
             Login
           </Button>
-          <Button className="w-full mt-2" size="lg" variant="ghost">
+          <Separator />
+          <Button
+            onClick={() => navigate("/register")}
+            className="w-full mt-2"
+            size="lg"
+            variant="secondary"
+          >
             Register
           </Button>
         </div>

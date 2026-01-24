@@ -1,18 +1,18 @@
-import { DataFetcher } from "@/components/custom/DataFetcher"
-import { UserCardList } from "@/components/custom/Test/TestComponent"
-import { Button } from "@/components/ui/button"
-import { useToast } from "@/hooks/useToast"
-import type { User } from "@/types/Test"
+import { DataFetcher } from "@/components/custom/DataFetcher";
+import { UserCardList } from "@/components/custom/Test/TestComponent";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/useToast";
+import type { User } from "@/types/Test";
 
 export default function Test() {
-  const toast = useToast()
+  const toast = useToast();
 
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-semibold"> User Directory</h1>
         <Button
-          variant="outline"
+          variant="primary"
           onClick={() =>
             toast.info("Refreshing data...", {
               description: "Fetching latest user list.",
@@ -30,15 +30,15 @@ export default function Test() {
           if (users.length > 0) {
             toast.success("Fetched users successfully!", {
               description: `${users.length} users found.`,
-            })
+            });
           } else {
             toast.warning("No users found", {
               description: "Try again later.",
-            })
+            });
           }
-          return <UserCardList users={users} />
+          return <UserCardList users={users} />;
         }}
       />
     </div>
-  )
+  );
 }
