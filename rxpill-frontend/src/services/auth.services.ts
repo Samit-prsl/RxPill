@@ -8,8 +8,17 @@ export interface RegisterPayload{
     shopName: string;
 }
 
+export interface LoginPayload{
+    email: string;
+    password: string;
+}
+
 export interface RegisterResponse{
     message:string;
+}
+
+export interface LoginResponse{
+    message: string;
 }
 
 export const authService = {
@@ -19,4 +28,11 @@ export const authService = {
             body: JSON.stringify(data),
         })
     },
+
+    login:(data: LoginPayload) => {
+        return api<LoginResponse>(`${API_BASE_URL}/auth/login`,{
+            method: 'POST',
+            body: JSON.stringify(data),
+        })
+    }
 }
